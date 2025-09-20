@@ -1,0 +1,15 @@
+*.db
+*.json
+
+# Visual Studio
+.vs/
+*.vsidx
+
+# Binaries and intermediate files
+[Dd]ebug/
+[Rr]elease/
+bin/
+obj/
+
+# User-specific files
+*.user
