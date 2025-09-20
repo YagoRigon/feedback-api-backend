@@ -1,6 +1,6 @@
 *.db
-*db-shm
-*db-wal
+*.db-shm
+*.db-wal
 *.json
 
 # Visual Studio
