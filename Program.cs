@@ -28,15 +28,17 @@ builder.Services.AddControllers();
 
 builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
 builder.Services.AddSingleton<EmailService>();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// ... (middlewares como UseHttpsRedirection)
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
-// Habilite o CORS antes de UseAuthorization e MapControllers
 app.UseCors();
-
-// ... (outros middlewares)
 
 app.MapControllers();
 app.Run();
